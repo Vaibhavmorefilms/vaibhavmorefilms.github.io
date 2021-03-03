@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abhishek Garg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico"/>
+    <title>VMFilms</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static/base.css"/>
+</head>
+<body>
+
+<!-- FULLSCREEN -->
+<div id="fullscreen" class="flex flex-column">
+    <div class="flex">
+        <iframe id="video_iframe" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+        <div>
+            <img id="video_iframe_close" src="static/close.png" onclick="hide_fullscreen()" width="50px"
+                 style="position: absolute"/>
+        </div>
+    </div>
+</div>
+
+<div id="body">
+    <div id="logo"></div>
+    <div id="header" class="text-center">
+        <div class="p1 active link" onclick="show_tab(this, '#portfolio')">PORTFOLIO</div>
+        <div class="p1 link" onclick="show_tab(this, '#character_design')">CHARACTER DESIGN</div>
+        <div class="p1 link" onclick="show_tab(this, '#about')">ABOUT</div>
+        <div class="p1 link" onclick="show_tab(this, '#contact')">CONTACT</div>
+    </div>
+    <div id="content">
+        <div class="active tab" id="portfolio">
+
+        </div>
+
+        <div class="tab" id="character_design">
+
+        </div>
+
+        <div class="tab" id="about">
+            <img src="static/about.jpg" style="max-width: 100%; object-fit: contain; object-position: top">
+        </div>
+
+        <div class="tab" id="contact">
+            <img src="static/contact.png" style="max-width: 100%; object-fit: contain; object-position: top">
+        </div>
+
+    </div>
+</div>
+
+
+<!-- javascript -->
+<script src="static/jquery.min.js"></script>
+<script type="text/javascript">
+    var portfolio = [
+        
+        "oH2IscU-pIQ", "kJP30cXAX9o", "Y6j0ETBeXvk", "u5vpdDhycXU",
+        "qV0-pJCfxUU", "7VAiYvExP2E", "5mwUwP8HxPw", "eKUoHnIMxHk",
+        
+        "ZP7vNhZfzGM", 
+        
+        "BPoa1IReR08", "cGQhVCi8HnQ", "nStQwv7kl-E", "52G5BdAglas",
+    	"89OYaTNIlaw", "Z_u2GFMnFOI", "8yU3dwr8uSc", "-B1bmbDpcVo",
+	    "Ej5x3QinE50", "14ytwdDTJXk", "sLYR4v9x9yk", "7iCLs8IfkWA",
+    	"5jItRrBv-TI", "NLmI1qLVCJM", "jHZGCquyVFI", "cwIFx2qclSs",
+    	"qGK58nLXgHA", "SV8IQEyprzk", "44qiRHemqi4", "61Cub348yrM",
+    	"xtBPxHt5BGQ", "2F8nEs25hIs", "le3aNpoBudo", "5H7TEfAvbuQ",
+        "NsuR8Nt-3og", "EOCt_hP7Qqw", "alDYs7TDBXM","bRVqvdcfzIk",
+        "dOK4K_yT--M", "2KVYRPgjimQ", "x7S_4IKV9KE", "TDVL0a5gW2M",
+        "WX1VFE1MQ9k", "JM1iyxOuWTM", "USI7nAXvSx8", "8yz5J99Qf7A",
+        "BYJ9sdCUUcQ", "9cqmGkHvI5I", "gGqQ8li1v2U", "7bh9Uw4DpGM", 
+        "R0sXP8LX01c", "DWCp-0-XYn8",
+        "I2Vns9Lp4Bc", "9NnRh2Vdo3w", "gkMo74HIe7I", "VAPsbVHtld4",
+        "rH_HYFySLVI", "3_cGOzMMIJ8", "IzFxkBUEIDk", "DCmBPJcQAII",
+        "Kul7yuH9yLk", "mAZHQr0o4zc", "sklZubtuC9c", "ByznDdQDbWA",
+        "RUsun9BTpeI", "VgHSO87Anuk", "DJNkvQkO9dQ", "U0Djnyf3qzE",
+        "Vetozj_Mq3w", "7xoc108ETLQ", "nWrCb7eJ4PU", "YF7jIZesCOc",
+        "CL1V1gM9DO8", "gmjOtPLtKSw", "UxfURT5kLu8", "4QrtC0vbL04",
+        "ILEomc2AYsI", "jbC-vpJB3Co", "VCYlOAEcFI8", "3pIvfS_nmPw",
+        "uFEFCcn4yKY", "OdBNV65yKoE", "JWtsY3PcZDc", "AiywZBKAvDI",
+        "QMgKv3EfPgY", "gONGojXS26k", "FexAXXBx-Qk", "cPw09DwSfgw",
+        "kxH0Kf1Sc7c", "vIy4AAdWy70", "RxBSJINWW7I", "gNIfhtU-q-Y",
+        "woP-ZKHzY7Q", "pRQXij12Ru4", "CT4-o04QgCE", "gKfHgODeOgU",
+        "V4ev-7XdnZU", "imxeQRqL3Uc", "27Wqx5q8ODw", "XSrNCFxhnp4",
+        "CqmMPGZziAM", "o613xUzFbB0", "4yxqN0mwEeQ", "H8QBk_DPCw0",
+        "TTo4d2dRS7U", "C0hcaqIaSgk", "8928MvAy1t8", "LSGH-1FGvao",
+        "r90kK2EIfRQ", "C4wShRVpzds", "huIjzi6Ae5g", "_KGE0xGB9-s",
+        "qjZ2b9gkmOo", "izo5PLoYD9w", "egkgCU8KyiU", "tNEuYB8yjis",
+        "A3HZrvGITrk", "rEOgBkXqSbg", "QuLlEuJFIK8"];
+
+
+    var character_design = [
+    	'iVeqHehrhqo', 'HhfQ6mGXsD8',
+        'QrjYm7iKvfo', '0YRvZWGLAqo', 'js08E1mnUX0', 'yVxIDcdjueA',
+        '4HQS_scbYyI', '2QLXV-v3GKg', 'z98OZ-MM_rE', 'abareq4wNw8',
+        'lebzq4-gQTo', 'wu0vZrtf0b0', 'Es2AjqZUUQ8', 'EwLRqhsw3VI',
+        'wEWJyg8NUdY', 's9CLb8x9ySU', '_J9XWegzbbQ', 'ABMtf7Qnugc',
+    ];
+
+    function show_tab(elem, id) {
+        $('.link').removeClass('active');
+        $(elem).addClass('active');
+
+        $(".tab").removeClass('active');
+        $(id).addClass('active');
+    }
+
+    function show_fullscreen(src) {
+        var fullscreen = $("#fullscreen");
+        fullscreen.css('display', 'flex');
+        fullscreen.find('iframe').attr('src', 'https://www.youtube.com/embed/' + src + '?rel=0');
+    }
+
+    function hide_fullscreen() {
+        var fullscreen = $("#fullscreen");
+        fullscreen.css('display', 'none');
+        fullscreen.find('iframe').attr('src', '');
+    }
+
+    $(window).resize(function () {
+        $("#content").height(window.innerHeight - $("#logo").height() - $("#header").height() - 40);
+
+        if (window.innerWidth <= 850) {
+            $("#video_iframe").attr('width', window.innerWidth).attr('height', window.innerWidth * 0.56);
+            $("#video_iframe_close").css({
+                left: window.innerWidth - 50
+            })
+        }
+    });
+
+    $(document).ready(function () {
+        $(window).resize();
+
+        $("#portfolio").append(
+                portfolio.map(function (p) {
+                    return "<div class='thumbnail'>" +
+                            "<img onclick='show_fullscreen(\"" + p + "\")' src='https://i.ytimg.com/vi/" + p +
+                            "/mqdefault.jpg' width='150px'/>" +
+                            "</div>"
+                })
+        );
+
+        $("#character_design").append(
+                character_design.map(function (p) {
+                    return "<div class='thumbnail'>" +
+                            "<img onclick='show_fullscreen(\"" + p + "\")' src='https://i.ytimg.com/vi/" + p +
+                            "/mqdefault.jpg' width='150px'/>" +
+                            "</div>"
+                })
+        )
+    });
+
+    /*
+     var list = [];
+     document.querySelectorAll('.yt-thumb-default').forEach(function (k) {
+     list.push(k.childNodes[1].childNodes[1].src.match(/vi\/(.*)\/hqdefault/g)[0].replace('vi/', '').replace('/hqdefault', ''))
+     })
+     */
+</script>
+</body>
+</html>

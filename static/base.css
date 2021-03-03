@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #000000;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  overflow: hidden; }
+
+#body {
+  height: 100vh;
+  width: 100vw;
+  padding: 2em; }
+  #body #content {
+    padding: 0 15vh;
+    overflow-x: hidden;
+    overflow-y: scroll; }
+  @media (max-width: 1024px) {
+    #body {
+      padding: 0; }
+      #body #content {
+        padding: 0; } }
+
+.flex {
+  display: flex; }
+
+.flex-column {
+  flex-direction: column; }
+
+.flex-grow {
+  flex-grow: 1; }
+
+.flex-center {
+  justify-content: center; }
+
+.p1 {
+  padding: 0.5em; }
+
+.text-center {
+  text-align: center; }
+
+.link {
+  color: #777777;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block; }
+  .link.active {
+    color: #ffffff; }
+
+.tab {
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  justify-content: center;
+  flex-wrap: wrap; }
+  .tab.active {
+    display: flex; }
+
+.thumbnail {
+  padding: 5px;
+  display: inline-block;
+  cursor: pointer; }
+
+#fullscreen {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  left: 0;
+  top: 0; }
+  #fullscreen iframe {
+    box-shadow: 0 0 10px #000; }
+
+#logo {
+  height: 150px;
+  background: url(./logo.png) no-repeat center;
+  background-size: contain; }
+
+.table th {
+  text-align: right;
+  padding-right: 1em; }
+
+@media (max-device-width: 1024px) {
+  body {
+    font-size: 12px; }
+
+  #logo {
+    height: 100px; }
+
+  #contact img {
+    max-width: 150% !important; } }
+
+/*# sourceMappingURL=base.css.map */
