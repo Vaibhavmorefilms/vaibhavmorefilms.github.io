@@ -54,18 +54,15 @@
 
 
 <!-- javascript -->
-<script src="static/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
     var portfolio = [
-        
-        "oH2IscU-pIQ", "kJP30cXAX9o", "Y6j0ETBeXvk", "u5vpdDhycXU",
-        "qV0-pJCfxUU", "7VAiYvExP2E", "5mwUwP8HxPw", "eKUoHnIMxHk",
-        
-        "ZP7vNhZfzGM", 
-        
-        "BPoa1IReR08", "cGQhVCi8HnQ", "nStQwv7kl-E", "52G5BdAglas",
+        "oH2IscU-pIQ", 
+	"kJP30cXAX9o", "Y6j0ETBeXvk", "u5vpdDhycXU", "qV0-pJCfxUU", 
+	"7VAiYvExP2E", "5mwUwP8HxPw", "eKUoHnIMxHk", "ZP7vNhZfzGM",
+	"BPoa1IReR08", "cGQhVCi8HnQ", "nStQwv7kl-E", "52G5BdAglas",
     	"89OYaTNIlaw", "Z_u2GFMnFOI", "8yU3dwr8uSc", "-B1bmbDpcVo",
-	    "Ej5x3QinE50", "14ytwdDTJXk", "sLYR4v9x9yk", "7iCLs8IfkWA",
+	"Ej5x3QinE50", "14ytwdDTJXk", "sLYR4v9x9yk", "7iCLs8IfkWA",
     	"5jItRrBv-TI", "NLmI1qLVCJM", "jHZGCquyVFI", "cwIFx2qclSs",
     	"qGK58nLXgHA", "SV8IQEyprzk", "44qiRHemqi4", "61Cub348yrM",
     	"xtBPxHt5BGQ", "2F8nEs25hIs", "le3aNpoBudo", "5H7TEfAvbuQ",
@@ -90,8 +87,8 @@
         "TTo4d2dRS7U", "C0hcaqIaSgk", "8928MvAy1t8", "LSGH-1FGvao",
         "r90kK2EIfRQ", "C4wShRVpzds", "huIjzi6Ae5g", "_KGE0xGB9-s",
         "qjZ2b9gkmOo", "izo5PLoYD9w", "egkgCU8KyiU", "tNEuYB8yjis",
-        "A3HZrvGITrk", "rEOgBkXqSbg", "QuLlEuJFIK8"];
-
+        "A3HZrvGITrk", "rEOgBkXqSbg", "QuLlEuJFIK8"
+    ];
 
     var character_design = [
     	'iVeqHehrhqo', 'HhfQ6mGXsD8',
@@ -145,21 +142,15 @@
         );
 
         $("#character_design").append(
-                character_design.map(function (p) {
-                    return "<div class='thumbnail'>" +
-                            "<img onclick='show_fullscreen(\"" + p + "\")' src='https://i.ytimg.com/vi/" + p +
-                            "/mqdefault.jpg' width='150px'/>" +
-                            "</div>"
-                })
+		character_design.map(function (p) {
+		    return "<div class='thumbnail'>" +
+			    "<img onclick='show_fullscreen(\"" + p + "\")' src='https://i.ytimg.com/vi/" + p +
+			    "/mqdefault.jpg' width='150px'/>" +
+			    "</div>"
+		})
         )
     });
 
-    /*
-     var list = [];
-     document.querySelectorAll('.yt-thumb-default').forEach(function (k) {
-     list.push(k.childNodes[1].childNodes[1].src.match(/vi\/(.*)\/hqdefault/g)[0].replace('vi/', '').replace('/hqdefault', ''))
-     })
-     */
 </script>
 </body>
 </html>
